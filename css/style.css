@@ -3,6 +3,10 @@
     --nav-header-1-img-size: 40px;
     --header-2-font-size: 20px;
     --nav-header-2-img-size: 25px;
+    --header-3-font-size: 16px;
+    --body-2-font-size: 15px;
+    --body-3-font-size: 13px;
+    --announcement-padding: 10px;
 }
 
 html, body {
@@ -24,11 +28,26 @@ html, body {
 
 .header-text-1 {
     font-size: var(--header-1-font-size);
-    font-weight: 400;
+    font-weight: 500;
 }
 .header-text-2 {
     font-size: var(--header-2-font-size);
-    font-weight: 400;
+    font-weight: 500;
+}
+
+.header-text-3 {
+    font-size: var(--header-3-font-size);
+    font-weight: 500;
+}
+
+.body-text-2 {
+    font-size: var(--body-2-font-size);
+    font-weight: 350;
+}
+
+.body-text-3 {
+    font-size: var(--body-3-font-size);
+    font-weight: 350;
 }
 
 #master-container nav {
@@ -55,7 +74,7 @@ nav {
     grid-template-rows: repeat(3, auto);
     align-content: start;
     gap: 50px;
-    padding: 20px 30px 0px 15px;
+    padding: 20px 0px 0px 15px;
 }
 
 .nav-link,
@@ -94,4 +113,68 @@ nav {
 .nav-link-header img {
     height: var(--nav-header-1-img-size);
 }
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+
+}
+
+.main-grid-right {
+    grid-column: 2 / 3;
+    padding-left: 15px;
+    padding-right: 30px;
+    row-gap: 20px;
+}
+
+.main-grid-left {
+    grid-column: 1 / 2;
+    padding-left: 30px;
+    padding-right: 15px;
+}
+
+.main-grid-left,
+.main-grid-right {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+    grid-gap: 40px;
+}
+
+.project-card {
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.announcement-card {
+    background-color: rgb(240, 240, 240);
+    font-size: 15px;
+    border-radius: 10px;
+    padding: calc(var(--announcement-padding) * 2);
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+}
+
+.bottom-border {
+    border-bottom: solid 1px black;
+}
+
+/* padding is used instead of row-gap so the border lines can be centered*/
+.announcement-card > div {
+    padding: var(--announcement-padding) 0px;
+}
+.announcement-card > div:first-child {
+    padding: 0px 0px var(--announcement-padding);
+}
+.announcement-card > div:last-child {
+    padding: var(--announcement-padding) 0px 0px;
+}
+
 
