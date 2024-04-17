@@ -125,7 +125,9 @@ nav {
     grid-column: 2 / 3;
     padding-left: 15px;
     padding-right: 30px;
-    row-gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 50px;
 }
 
 .main-grid-left {
@@ -177,4 +179,21 @@ nav {
     padding: var(--announcement-padding) 0px 0px;
 }
 
+.profile-pic-small {
+    height: 40px;
+    border-radius: 50%;
+}
 
+.profile-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.trending-card {
+    background-color: rgb(240, 240, 240);
+    font-size: 15px;
+    border-radius: 10px;
+    padding: calc(var(--announcement-padding) * 2);
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+}
