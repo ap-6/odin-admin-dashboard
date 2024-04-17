@@ -2,7 +2,7 @@
     --header-1-font-size: 25px;
     --nav-header-1-img-size: 40px;
     --header-2-font-size: 20px;
-    --nav-header-2-img-size: 20px;
+    --nav-header-2-img-size: 25px;
 }
 
 html, body {
@@ -24,9 +24,11 @@ html, body {
 
 .header-text-1 {
     font-size: var(--header-1-font-size);
+    font-weight: 400;
 }
 .header-text-2 {
     font-size: var(--header-2-font-size);
+    font-weight: 400;
 }
 
 #master-container nav {
@@ -52,25 +54,24 @@ nav {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
     align-content: start;
-    gap: 60px;
-    padding: 30px 30px 0px 15px;
+    gap: 50px;
+    padding: 20px 30px 0px 15px;
 }
 
 .nav-link,
 .nav-link-header {
     color: white;
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: var(--nav-header-1-img-size) 1fr;
     align-items: center;
     justify-items: start;
-    border: 1px solid black;
-    text-decoration: none;
-
     gap: 10px;
 }
 
 .nav-link {
     max-height: 40px;
+    margin-bottom: 10px;
+    text-decoration: none;
 }
 
 .nav-link-header {
@@ -79,6 +80,11 @@ nav {
 
 .nav-link:hover {
     text-decoration: underline;
+}
+
+.nav-link-header img,
+.nav-link img {
+    justify-self: center;
 }
 
 .nav-link img {
