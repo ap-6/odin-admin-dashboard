@@ -11,6 +11,8 @@
 
     --primary-color: rgb(121, 121, 255);
     --secondary-color: rgb(255, 145, 0);
+    --primary-color-dark: rgb(103, 103, 219);
+    --primary-color-bright: rgb(204, 204, 255);
 }
 
 html, body {
@@ -257,6 +259,14 @@ button {
     padding: 10px 20px;
     border-radius: 20px;
     border: none;
+}
+
+button:hover {
+    background-color: var(--primary-color-dark);
+}
+
+button:hover:active {
+    outline: 2px solid var(--primary-color-bright);
 }
 
 #greeting {
