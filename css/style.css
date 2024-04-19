@@ -12,7 +12,12 @@
     --primary-color: rgb(121, 121, 255);
     --secondary-color: rgb(255, 145, 0);
     --primary-color-dark: rgb(103, 103, 219);
-    --primary-color-bright: rgb(0, 0, 102);
+    --primary-color-dark2: rgb(100, 100, 212);
+    --primary-color-dark3: rgb(31, 31, 136);
+    --light-background: rgb(255, 255, 255);
+    --light-accent: rgb(226 232 240);
+    --light-accent2: rgb(220, 226, 228);
+    --focus-accent: rgb(149, 188, 238);
 }
 
 html, body {
@@ -22,6 +27,16 @@ html, body {
     margin: 0px;
     font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
     font-weight: normal;
+}
+
+/* For screen readers accessibility, but not visible on screen */
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
 
 #master-container {
@@ -65,13 +80,13 @@ html, body {
 #master-container header {
     grid-row: 1 / 2;
     grid-column: 2 / 3;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--light-background);
 }
 
 #master-container main {
     grid-row: 2 / 3;
     grid-column: 2 / 3;
-    background-color: rgb(197, 197, 197);
+    background-color: var(--light-accent);
 }
 
 nav {
@@ -227,11 +242,23 @@ nav {
 }
 
 input[type="search"] {
-    background-color: rgb(192, 192, 192);
+    background-color: var(--light-accent);
     padding: 10px 20px;
     height: 40px;
     border: none;
     border-radius: 20px;
+}
+
+input[type="search"]:hover {
+    background-color: var(--light-accent2);
+}
+
+input[type="search"]:active,
+input[type="search"]:focus {
+    outline: 1px solid var(--focus-accent);
+    background-color: var(--light-accent2);
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.01); 
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.01);
 }
 
 header {
@@ -266,8 +293,9 @@ button:hover {
     background-color: var(--primary-color-dark);
 }
 
-button:hover:active {
-    outline: 1px solid var(--primary-color-bright);
+button:active {
+    outline: 1px solid var(--primary-color-dark3);
+    background-color: var(--primary-color-dark2);
 }
 
 #greeting {
@@ -278,8 +306,4 @@ button:hover:active {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, 1fr);
-}
-
-#post-buttons button {
-    
 }
