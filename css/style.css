@@ -6,7 +6,11 @@
     --header-3-font-size: 16px;
     --body-2-font-size: 15px;
     --body-3-font-size: 13px;
-    --announcement-padding: 10px;
+    --card-padding: 12px;
+    --card-roundness: 5px;
+
+    --primary-color: rgb(121, 121, 255);
+    --secondary-color: rgb(255, 145, 0);
 }
 
 html, body {
@@ -53,7 +57,7 @@ html, body {
 #master-container nav {
     grid-row: 1 / 3;
     grid-column: 1 / 2;
-    background-color: rgb(118, 118, 255);
+    background-color: var(--primary-color);
 }
 
 #master-container header {
@@ -121,7 +125,6 @@ nav {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr;
-
 }
 
 .main-grid-right {
@@ -152,17 +155,21 @@ nav {
     grid-gap: 40px;
 }
 
-.project-card {
+.card {
     background-color: rgb(240, 240, 240);
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: var(--card-roundness);
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3); 
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3);
+}
+
+.project-card {
+    padding: calc(var(--card-padding) * 2);
+    border-left: var(--card-roundness) solid var(--secondary-color);
 }
 
 .announcement-card {
-    background-color: rgb(240, 240, 240);
     font-size: 15px;
-    border-radius: 10px;
-    padding: calc(var(--announcement-padding) * 2);
+    padding: calc(var(--card-padding) * 2);
     display: grid;
     grid-template-rows: repeat(3, auto);
 }
@@ -173,13 +180,13 @@ nav {
 
 /* padding is used instead of row-gap so the border lines can be centered*/
 .announcement-card > div {
-    padding: var(--announcement-padding) 0px;
+    padding: var(--card-padding) 0px;
 }
 .announcement-card > div:first-child {
-    padding: 0px 0px var(--announcement-padding);
+    padding: 0px 0px var(--card-padding);
 }
 .announcement-card > div:last-child {
-    padding: var(--announcement-padding) 0px 0px;
+    padding: var(--card-padding) 0px 0px;
 }
 
 .profile-pic-small {
@@ -198,10 +205,8 @@ nav {
 }
 
 .trending-card {
-    background-color: rgb(240, 240, 240);
     font-size: 15px;
-    border-radius: 10px;
-    padding: calc(var(--announcement-padding) * 2);
+    padding: calc(var(--card-padding) * 2);
     display: grid;
     grid-template-rows: repeat(3, auto);
 }
@@ -248,10 +253,10 @@ header {
 
 button {
     color: white;
-    background-color: rgb(87, 87, 255);
+    background-color: var(--primary-color);
     padding: 10px 20px;
     border-radius: 20px;
-
+    border: none;
 }
 
 #greeting {
