@@ -6,7 +6,8 @@
     --header-3-font-size: 16px;
     --body-2-font-size: 15px;
     --body-3-font-size: 13px;
-    --card-padding: 12px;
+    --card-padding: 13px;
+    --announcement-card-x-padding: 5px;
     --card-roundness: 5px;
 
     --primary-color: rgb(121, 121, 255);
@@ -17,6 +18,7 @@
     --light-background: rgb(255, 255, 255);
     --light-accent: rgb(226 232 240);
     --light-accent2: rgb(220, 226, 228);
+    --light-accent3: rgb(195, 200, 202);
     --focus-accent: rgb(149, 188, 238);
 }
 
@@ -173,7 +175,7 @@ nav {
 }
 
 .card {
-    background-color: rgb(240, 240, 240);
+    background-color: var(--light-background);
     border-radius: var(--card-roundness);
     -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3); 
     box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3);
@@ -182,6 +184,15 @@ nav {
 .project-card {
     padding: calc(var(--card-padding) * 2);
     border-left: var(--card-roundness) solid var(--secondary-color);
+    transition: transform 0.3s ease;
+}
+
+.card-title {
+    margin-bottom: 5px;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
 }
 
 .announcement-card {
@@ -192,18 +203,18 @@ nav {
 }
 
 .bottom-border {
-    border-bottom: solid 1px black;
+    border-bottom: solid 1px var(--light-accent3);
 }
 
 /* padding is used instead of row-gap so the border lines can be centered*/
 .announcement-card > div {
-    padding: var(--card-padding) 0px;
+    padding: var(--card-padding) var(--announcement-card-x-padding);
 }
 .announcement-card > div:first-child {
-    padding: 0px 0px var(--card-padding);
+    padding: 0px var(--announcement-card-x-padding) var(--card-padding);
 }
 .announcement-card > div:last-child {
-    padding: var(--card-padding) 0px 0px;
+    padding: var(--card-padding) var(--announcement-card-x-padding) 0px;
 }
 
 .profile-pic-small {
@@ -307,3 +318,8 @@ button:active {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, 1fr);
 }
+
+.section-title {
+    margin-bottom: 11px;
+}
+
