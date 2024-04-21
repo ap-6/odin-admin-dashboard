@@ -10,7 +10,8 @@
 
     --card-padding: 13px;
     --card-roundness: 5px;
-    --announcement-card-x-padding: 5px;
+    /* --announcement-card-x-padding: 5px; */
+    --announcement-card-x-padding: 31px;
 
     --font-weight-standard: 360;
     --font-weight-bold: 500;
@@ -132,6 +133,7 @@ nav {
     padding: 6px;
     /* margin-top: 4px; */
     border-radius: 15px 0px 0px 15px;
+    cursor: pointer;
 }
 
 .nav-link span,
@@ -216,24 +218,25 @@ nav {
 
 .announcement-card {
     font-size: 15px;
-    padding: calc(var(--card-padding) * 2);
+    padding: var(--card-padding) 0px;
     display: grid;
     grid-template-rows: repeat(3, auto);
 }
 
 .bottom-border {
-    border-bottom: solid 1px var(--light-accent3);
+    border-bottom: solid 1px var(--light-accent2);
 }
 
 /* padding is used instead of row-gap so the border lines can be centered*/
 .announcement-card > div {
     padding: var(--card-padding) var(--announcement-card-x-padding);
+    /* margin: 0px 26px; */
 }
 .announcement-card > div:first-child {
-    padding: 0px var(--announcement-card-x-padding) var(--card-padding);
+    padding: var(--card-padding) var(--announcement-card-x-padding);
 }
 .announcement-card > div:last-child {
-    padding: var(--card-padding) var(--announcement-card-x-padding) 0px;
+    padding: var(--card-padding) var(--announcement-card-x-padding);
 }
 
 .profile-pic-small {
@@ -261,10 +264,27 @@ nav {
 
 .trending-card {
     font-size: 15px;
-    padding: calc(var(--card-padding) * 2);
+    padding: calc(var(--card-padding) * 2) 0px;
     display: grid;
     grid-template-rows: repeat(4, auto);
-    gap: 20px;
+    gap: 0px;
+}
+
+.trending-card > a {
+    padding: 10px calc(var(--card-padding) * 2);
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.trending-card > a,
+.announcement-card > div {
+    transition: background-color 0.1s ease;
+}
+
+.trending-card > a:hover,
+.announcement-card > div:hover {
+    background-color: var(--light-accent);
 }
 
 #header-top {
