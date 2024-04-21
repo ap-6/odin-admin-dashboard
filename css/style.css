@@ -346,7 +346,7 @@ header {
 
 .project-buttons {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 30px);
+    grid-template-columns: repeat(auto-fit, 30px); 
     grid-template-rows: auto;
     grid-template-rows: 1fr;
     justify-content: end;
