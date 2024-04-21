@@ -10,6 +10,9 @@
     --announcement-card-x-padding: 5px;
     --card-roundness: 5px;
 
+    --font-weight-standard: 360;
+    --font-weight-bold: 500;
+
     --primary-color: rgb(121, 121, 255);
     --secondary-color: rgb(255, 145, 0);
     --primary-color-dark: rgb(103, 103, 219);
@@ -28,7 +31,7 @@ html, body {
     padding: 0px;
     margin: 0px;
     font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
-    font-weight: normal;
+    font-weight: var(--font-weight-standard);
 }
 
 /* For screen readers accessibility, but not visible on screen */
@@ -49,28 +52,27 @@ html, body {
     grid-template-rows: 1fr 4fr;
 }
 
-.header-text-1 {
+.bold-text { 
+    font-weight: var(--font-weight-bold);
+}
+
+.text-size-1 { 
     font-size: var(--header-1-font-size);
-    font-weight: 500;
 }
-.header-text-2 {
+.text-size-2 { 
     font-size: var(--header-2-font-size);
-    font-weight: 500;
 }
 
-.header-text-3 {
+.text-size-3 { 
     font-size: var(--header-3-font-size);
-    font-weight: 500;
 }
 
-.body-text-2 {
+.text-size-4 { 
     font-size: var(--body-2-font-size);
-    font-weight: 350;
 }
 
-.body-text-3 {
+.text-size-5 { 
     font-size: var(--body-3-font-size);
-    font-weight: 350;
 }
 
 #master-container nav {
@@ -344,12 +346,13 @@ header {
 
 .project-buttons {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 15%);
+    grid-template-columns: repeat(auto-fit, 30px);
     grid-template-rows: auto;
     grid-template-rows: 1fr;
     justify-content: end;
     align-items: center;
     gap: 5px;
+    margin-top: 10px;
 }
 
 #greeting {
