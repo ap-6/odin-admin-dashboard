@@ -93,7 +93,7 @@ html, body {
 
 nav {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: auto;
     grid-template-rows: repeat(3, auto);
     align-content: start;
     gap: 50px;
@@ -103,20 +103,34 @@ nav {
     box-shadow: 2px 0px 4px 0px rgba(0,0,0,0.2);
 }
 
+.nav-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fit, 0.1fr);
+    gap: 10px;
+}
+
 .nav-link,
 .nav-link-header {
     color: white;
     display: grid;
     grid-template-columns: var(--nav-header-1-img-size) 1fr;
     align-items: center;
-    justify-items: start;
-    gap: 10px;
+    column-gap: 10px;
 }
 
 .nav-link {
     max-height: 40px;
-    margin-bottom: 10px;
     text-decoration: none;
+    padding: 6px;
+    /* margin-top: 4px; */
+    border-radius: 15px 0px 0px 15px;
+}
+
+.nav-link span,
+.nav-link-header span {
+    justify-self: start;
+
 }
 
 .nav-link-header {
@@ -124,8 +138,14 @@ nav {
 }
 
 .nav-link:hover {
-    text-decoration: underline;
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.2); 
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.2);
+    background-color: var(--primary-color-dark2);
+    transition: all 0.1s ease;
+    /* margin: 0px 0px 0px 0px; */
+    padding: 8px;
 }
+
 
 .nav-link-header img,
 .nav-link img {
