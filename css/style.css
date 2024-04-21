@@ -1,23 +1,21 @@
 :root {
-    --text-size-1: 25px;
-    --text-size-2: 20px;
-    --text-size-3: 16px;
-    --text-size-4: 15px;
-    --text-size-5: 13px;
+    --font-size-1: 25px;
+    --font-size-2: 18px;
+    --font-size-3: 15px;
+    --font-size-4: 13px;
+    --font-size-5: 13px;
 
     --nav-img-size-1: 40px;
     --nav-img-size-2: 25px;
 
-    --card-padding: 13px;
     --card-roundness: 5px;
-    /* --announcement-card-x-padding: 5px; */
-    --announcement-card-x-padding: 25px;
+    --card-padding: 25px;
 
     --font-weight-standard: 360;
     --font-weight-bold: 500;
 
-    --profile-pic-small: 45px;
-    --profile-pic-large: 80px;
+    --profile-pic-small: 40px;
+    --profile-pic-large: 70px;
 
     --primary-color: rgb(121, 121, 255);
     --secondary-color: rgb(255, 145, 0);
@@ -38,6 +36,26 @@ html, body {
     margin: 0px;
     font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
     font-weight: var(--font-weight-standard);
+}
+
+.font-size-1 {
+    font-size: var(--font-size-1);
+}
+
+.font-size-2 {
+    font-size: var(--font-size-2);
+}
+
+.font-size-3 {
+    font-size: var(--font-size-3);
+}
+
+.font-size-4 {
+    font-size: var(--font-size-4);
+}
+
+.font-size-5 {
+    font-size: var(--font-size-5);
 }
 
 /* For screen readers accessibility, but not visible on screen */
@@ -62,25 +80,6 @@ html, body {
     font-weight: var(--font-weight-bold);
 }
 
-.text-size-1 { 
-    font-size: var(--text-size-1);
-}
-.text-size-2 { 
-    font-size: var(--text-size-2);
-}
-
-.text-size-3 { 
-    font-size: var(--text-size-3);
-}
-
-.text-size-4 { 
-    font-size: var(--text-size-4);
-}
-
-.text-size-5 { 
-    font-size: var(--text-size-5);
-}
-
 #master-container nav {
     grid-row: 1 / 3;
     grid-column: 1 / 2;
@@ -91,6 +90,9 @@ html, body {
     grid-row: 1 / 2;
     grid-column: 2 / 3;
     background-color: var(--light-background);
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    gap: 15px;
 }
 
 #master-container main {
@@ -203,7 +205,7 @@ nav {
 }
 
 .project-card {
-    padding: calc(var(--card-padding) * 2);
+    padding: var(--card-padding);
     border-left: var(--card-roundness) solid var(--secondary-color);
     transition: transform 0.3s ease;
 }
@@ -218,7 +220,7 @@ nav {
 
 .announcement-card {
     font-size: 15px;
-    padding: var(--card-padding) 0px;
+    padding: calc(var(--card-padding) / 2) 0px;
     display: grid;
     grid-template-rows: repeat(3, auto);
 }
@@ -229,13 +231,13 @@ nav {
 
 /* padding is used instead of row-gap so the border lines can be centered*/
 .announcement-card > div {
-    padding: var(--card-padding) var(--announcement-card-x-padding);
+    padding: calc(var(--card-padding) / 2) var(--card-padding);
 }
 .announcement-card > div:first-child {
-    padding: var(--card-padding) var(--announcement-card-x-padding);
+    padding: calc(var(--card-padding) / 2) var(--card-padding);
 }
 .announcement-card > div:last-child {
-    padding: var(--card-padding) var(--announcement-card-x-padding);
+    padding: calc(var(--card-padding) / 2) var(--card-padding);
 }
 
 .profile-pic-small {
@@ -262,15 +264,14 @@ nav {
 }
 
 .trending-card {
-    font-size: 15px;
-    padding: calc(var(--card-padding) * 1) 0px;
+    padding: calc(calc(var(--card-padding) / 2) * 1) 0px;
     display: grid;
     grid-template-rows: repeat(4, auto);
     gap: 0px;
 }
 
 .trending-card > a {
-    padding: 10px var(--announcement-card-x-padding);
+    padding: 10px var(--card-padding);
     text-decoration: none;
     color: black;
     cursor: pointer;
@@ -291,11 +292,11 @@ nav {
     align-items: center;
 }
 
-.search-btn {
-    height: 40px;
+.icon {
+    height: 25px;
 }
+
 .notification-btn {
-    height: 40px;
     margin-left: auto;
 }
 
@@ -305,6 +306,7 @@ input[type="search"] {
     height: 40px;
     border: none;
     border-radius: 20px;
+    width: auto;
 }
 
 input[type="search"]:hover {
@@ -341,7 +343,7 @@ header {
 .styled-button {
     color: white;
     background-color: var(--primary-color);
-    padding: 10px 20px;
+    padding: 8px 20px;
     border-radius: 20px;
     border: none;
     box-sizing: border-box;
@@ -382,6 +384,9 @@ header {
 
 #greeting {
     margin-right: auto;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    gap: 5px;
 }
 
 #post-buttons {
