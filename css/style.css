@@ -1,14 +1,16 @@
 :root {
-    --header-1-font-size: 25px;
-    --nav-header-1-img-size: 40px;
-    --header-2-font-size: 20px;
-    --nav-header-2-img-size: 25px;
-    --header-3-font-size: 16px;
-    --body-2-font-size: 15px;
-    --body-3-font-size: 13px;
+    --text-size-1: 25px;
+    --text-size-2: 20px;
+    --text-size-3: 16px;
+    --text-size-4: 15px;
+    --text-size-5: 13px;
+
+    --nav-img-size-1: 40px;
+    --nav-img-size-2: 25px;
+
     --card-padding: 13px;
-    --announcement-card-x-padding: 5px;
     --card-roundness: 5px;
+    --announcement-card-x-padding: 5px;
 
     --font-weight-standard: 360;
     --font-weight-bold: 500;
@@ -60,22 +62,22 @@ html, body {
 }
 
 .text-size-1 { 
-    font-size: var(--header-1-font-size);
+    font-size: var(--text-size-1);
 }
 .text-size-2 { 
-    font-size: var(--header-2-font-size);
+    font-size: var(--text-size-2);
 }
 
 .text-size-3 { 
-    font-size: var(--header-3-font-size);
+    font-size: var(--text-size-3);
 }
 
 .text-size-4 { 
-    font-size: var(--body-2-font-size);
+    font-size: var(--text-size-4);
 }
 
 .text-size-5 { 
-    font-size: var(--body-3-font-size);
+    font-size: var(--text-size-5);
 }
 
 #master-container nav {
@@ -119,7 +121,7 @@ nav {
 .nav-link-header {
     color: white;
     display: grid;
-    grid-template-columns: var(--nav-header-1-img-size) 1fr;
+    grid-template-columns: var(--nav-img-size-1) 1fr;
     align-items: center;
     column-gap: 10px;
 }
@@ -158,11 +160,11 @@ nav {
 }
 
 .nav-link img {
-    height: var(--nav-header-2-img-size);
+    height: var(--nav-img-size-2);
 }
 
 .nav-link-header img {
-    height: var(--nav-header-1-img-size);
+    height: var(--nav-img-size-1);
 }
 
 .main-grid {
@@ -247,13 +249,22 @@ nav {
 .profile-grid {
     display: grid;
     grid-template-columns: auto 1fr;
+    gap: 13px;
+    align-items: center;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
 .trending-card {
     font-size: 15px;
     padding: calc(var(--card-padding) * 2);
     display: grid;
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(4, auto);
+    gap: 20px;
 }
 
 #header-top {
