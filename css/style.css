@@ -17,11 +17,10 @@
     --profile-pic-small: 40px;
     --profile-pic-large: 70px;
 
-    --primary-color: rgb(121, 121, 255);
+    --primary-color: hsl(240, 100%, 74%);
+    --primary-color-dark: hsl(240, 62%, 63%);
+    --primary-color-dark2: hsl(240, 57%, 61%);
     --secondary-color: rgb(255, 145, 0);
-    --primary-color-dark: rgb(103, 103, 219);
-    --primary-color-dark2: rgb(100, 100, 212);
-    --primary-color-dark3: rgb(31, 31, 136);
     --light-background: rgb(255, 255, 255);
     --light-accent: rgb(226 232 240);
     --light-accent2: rgb(220, 226, 228);
@@ -354,7 +353,6 @@ header {
 }
 
 .styled-button:active {
-    outline: 1px solid var(--primary-color-dark3);
     background-color: var(--primary-color-dark2);
 }
 
